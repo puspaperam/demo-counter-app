@@ -1,19 +1,24 @@
 pipeline{
     agent any
     stages{
-        stage('code checkout'){
+        stage('Code Checkout'){
             steps{
                 git branch: 'main', url: 'https://github.com/puspaperam/demo-counter-app.git'
             }
         }
-        stage('unit testing'){
+        stage('Unit Testing'){
             steps{
                 sh 'mvn test'
             }
         }
-        stage('inntegration testing'){
+        stage('Integration Testing'){
             steps{
                 sh 'mvn verify -DskipUnitTests'
+            }
+        }
+        stage('Maven Build'){
+            steps{
+                sh 'mvn mvn clean install'
             }
         }
     }
