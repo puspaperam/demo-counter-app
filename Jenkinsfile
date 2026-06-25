@@ -47,7 +47,7 @@ pipeline{
                     ], 
                     credentialsId: 'nexus_cre', 
                     groupId: 'com.example', 
-                    nexusUrl: 'http://192.168.124.129:8081', 
+                    nexusUrl: '192.168.124.129:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'deployapp-release', 
